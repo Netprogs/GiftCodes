@@ -1,6 +1,9 @@
 GiftCodes
 =========
 
+Help drive visits to server websites by giving players in-game gifts for going there.
+
+
 ### Download:
 
 https://github.com/Netprogs/GiftCodes/downloads
