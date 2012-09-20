@@ -16,19 +16,21 @@ This plug-in requires you to have a MySQL server setup. There is no flat-file op
 
 ### Commands:
 
-* /giftcodes    	 		- Request a gift
-* /giftcodes give <token>		- Push someone's token through for them (also called by web to do the redeem)
+* /giftcodes          	 			- Request a gift
+* /giftcodes give &lt;token&gt;		- Push someone's token through for them (also called by web to do the redeem)
 * /giftcodes reload 			- Reload the configurations
-* /giftcodes help 			- Help page
+* /giftcodes fixchat &lt;player&gt; 	- Turns on the players chat again should something go wrong. 
+* /giftcodes help 				- Help page
 
 Alias: /giftme
 
 
 ### Permissions:
 
-* giftcodes.giftme	- Ability to request a gift.
+* giftcodes.giftme		- Ability to request a gift.
 * giftcodes.give		- Ability to use give command.
-* giftcodes.reload	- Ability to use reload command.
+* giftcodes.reload		- Ability to use reload command.
+* giftcodes.fixchat		- Ability to use fixchat command.
 
 
 ### Installation
