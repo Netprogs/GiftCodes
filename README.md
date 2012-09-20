@@ -72,3 +72,64 @@ To check the redeem:
 http://WEBSITE/giftcodes/widget_interface.php?gift_token=TOKEN_VALUE_HERE&action=redeem
 
 
+### API
+
+To use the token/gift features externally to this plug-in, you can use the following API methods.
+
+An example on how to load the GiftCodesApi:
+
+        // If the plugin is soft-depend, check to make sure the server has it loaded
+        Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("GiftCodes");
+        if (plugin != null) {
+
+            //
+            // If it is "depend", then skip the above check and just use the following code.
+            //
+            // "this" is the plug-in instance your calling within
+            // true/false to indicate if you want GiftCodes to record debug messages in the logs
+            //
+            GiftCodesApi giftCodesApi = new GiftCodesApi(this, true);
+            if (!giftCodesApi.isEnabled()) {
+
+                // If it's not loaded, then disable things as needed.
+
+            } else {
+            
+                // From here on, you can use the giftCodesApi instance for hooking into GiftCodes
+            }
+
+        } else {
+
+            getLogger().info("Could not find GiftCodes; features are disabled.");
+        }
+
+
+Now that you have an instance, you can call the following methods:
+
+    /**
+     * Creates a new gift and token.
+     * @param playerName The player to receive the gift and token.
+     * @return The token string for the gift.
+     */
+    public String createGiftCode(String playerName);
+
+    /**
+     * Load the GiftCode java object from the database using the given token.
+     * @param giftToken The gift token to load.
+     * @return A GiftCode java object containing the gift details.
+     */
+    public GiftCode loadGiftCode(String giftToken);
+
+    /**
+     * Redeem the gift code and give the player their gift.
+     * @param giftCode The gift to redeem.
+     * @return True if the player was online and the gift was given. False if the player was not online.
+     */
+    public boolean redeemGiftCode(GiftCode giftCode);
+
+    /**
+     * Deletes the given gift code from the database.
+     * @param giftCode The gift code to delete.
+     */
+    public void deleteGiftCode(GiftCode giftCode);
+        
