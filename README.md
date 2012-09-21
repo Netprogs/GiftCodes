@@ -3,6 +3,14 @@ GiftCodes
 
 Help drive visits to server websites by giving players in-game gifts for going there.
 
+A player can request a gift using /giftme. They will then receive a token and URL to visit to redeem the token.
+
+Their chat is paused so they can read the token without it scrolling off the page too soon. 
+It is activated again after redeem is completed. They can also use /giftme chat to enable their chat sooner should they wish.
+
+Once they visit the website and enter their token, the website will contact back to Minecraft and give the player their gift. 
+They *must* be online to receive the gift, if they're not, the redeem won't be completed and will be left to try again until they are online.
+
 
 ### Download:
 
@@ -16,11 +24,12 @@ This plug-in requires you to have a MySQL server setup. There is no flat-file op
 
 ### Commands:
 
-* /giftcodes          	 			- Request a gift
+* /giftcodes          	 				- Request a gift. 
 * /giftcodes give &lt;token&gt;		- Push someone's token through for them (also called by web to do the redeem)
-* /giftcodes reload 			- Reload the configurations
-* /giftcodes fixchat &lt;player&gt; 	- Turns on the players chat again should something go wrong. 
-* /giftcodes help 				- Help page
+* /giftcodes reload 				- Reload the configurations
+* /giftcodes chat			 		- Enables chat again.  
+* /giftcodes token			 		- Request their current token again should they need it.  
+* /giftcodes help 					- Help page
 
 Alias: /giftme
 
@@ -30,7 +39,8 @@ Alias: /giftme
 * giftcodes.giftme		- Ability to request a gift.
 * giftcodes.give		- Ability to use give command.
 * giftcodes.reload		- Ability to use reload command.
-* giftcodes.fixchat		- Ability to use fixchat command.
+* giftcodes.chat		- Ability to use chat command.
+* giftcodes.token		- Ability to use token command.
 
 
 ### Installation
